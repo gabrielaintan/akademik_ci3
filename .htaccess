@@ -1,0 +1,17 @@
+# ------------------------------------------------------------------
+# URL rewrite opsional untuk CodeIgniter 3.
+#
+# File ini hanya berpengaruh jika Apache + mod_rewrite aktif dan
+# AllowOverride diizinkan. Pada konfigurasi default aplikasi,
+# index_page masih 'index.php', sehingga URL tetap berbentuk:
+#   http://localhost/pengantar/index.php/mahasiswa
+#
+# Jika ingin URL tanpa index.php, ubah di application/config/config.php:
+#   $config['index_page'] = '';
+# ------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>

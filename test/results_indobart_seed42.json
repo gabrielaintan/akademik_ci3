@@ -1,0 +1,122 @@
+{
+  "run_id": "indobart_seed42",
+  "model": "indobenchmark/indobart-v2",
+  "split_seed": 42,
+  "split_seed_used": 49,
+  "group_by": "article",
+  "n_split_groups": {
+    "train": 48,
+    "valid": 6,
+    "test": 7
+  },
+  "train_seed": 42,
+  "config": {
+    "MAX_SRC_LEN": 256,
+    "MAX_TGT_LEN": 256,
+    "EPOCHS_MAX": 15,
+    "PATIENCE": 3,
+    "LR": 0.0005,
+    "BATCH": 8,
+    "ACCUM": 2,
+    "LORA_R": 16,
+    "LORA_ALPHA": 32,
+    "LORA_DROPOUT": 0.1,
+    "USE_4BIT": true,
+    "GEN_KW": {
+      "num_beams": 4,
+      "max_new_tokens": 256,
+      "early_stopping": true,
+      "no_repeat_ngram_size": 3,
+      "do_sample": false
+    }
+  },
+  "versions": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.20.2",
+    "peft": "0.21.2"
+  },
+  "bertscore_hash": "bert-base-multilingual-cased_L9_no-idf_version=0.3.12(hug_trans=5.20.2)",
+  "nltk_punkt_ok": true,
+  "n_unfinished_outputs": 0,
+  "overall": {
+    "n": 240,
+    "SARI_paper(custom,0-1)": 0.3753288594726084,
+    "SARI_standard(0-100)": 45.62977325141658,
+    "BLEU": 14.71396326396374,
+    "BERTScore_P": 0.8213813304901123,
+    "BERTScore_R": 0.8139994144439697,
+    "BERTScore_F1": 0.8171562552452087,
+    "FRE_ID_source": -23.342022108128926,
+    "FRE_ID_pred": -19.902906114540695,
+    "FRE_ID_ref": -19.453862909596772,
+    "FRE_ID_gain(pred-source; +=lebih mudah)": 3.4391159935882314,
+    "copy_rate(pred==source)": 0.03333333333333333
+  },
+  "per_level": {
+    "L1": {
+      "n": 80,
+      "SARI_paper(custom,0-1)": 0.37374300130842564,
+      "SARI_standard(0-100)": 46.14563299259726,
+      "BLEU": 16.161055508368076,
+      "BERTScore_P": 0.8228187561035156,
+      "BERTScore_R": 0.8272409439086914,
+      "BERTScore_F1": 0.8243891596794128,
+      "FRE_ID_source": -23.342022108128926,
+      "FRE_ID_pred": -11.389149424105286,
+      "FRE_ID_ref": -2.9770344159516737,
+      "FRE_ID_gain(pred-source; +=lebih mudah)": 11.95287268402364,
+      "copy_rate(pred==source)": 0.025
+    },
+    "L2": {
+      "n": 80,
+      "SARI_paper(custom,0-1)": 0.372273915344175,
+      "SARI_standard(0-100)": 44.0572898930604,
+      "BLEU": 14.596941085013935,
+      "BERTScore_P": 0.8281179666519165,
+      "BERTScore_R": 0.8111122846603394,
+      "BERTScore_F1": 0.8191635012626648,
+      "FRE_ID_source": -23.342022108128926,
+      "FRE_ID_pred": -17.362300750959378,
+      "FRE_ID_ref": -18.847480301710483,
+      "FRE_ID_gain(pred-source; +=lebih mudah)": 5.979721357169549,
+      "copy_rate(pred==source)": 0.05
+    },
+    "L3": {
+      "n": 80,
+      "SARI_paper(custom,0-1)": 0.37996966176522484,
+      "SARI_standard(0-100)": 46.68639686859211,
+      "BLEU": 11.794737427351613,
+      "BERTScore_P": 0.8132072687149048,
+      "BERTScore_R": 0.803645133972168,
+      "BERTScore_F1": 0.8079162836074829,
+      "FRE_ID_source": -23.342022108128926,
+      "FRE_ID_pred": -30.957268168557427,
+      "FRE_ID_ref": -36.53707401112816,
+      "FRE_ID_gain(pred-source; +=lebih mudah)": -7.6152460604285,
+      "copy_rate(pred==source)": 0.025
+    }
+  },
+  "level_control": {
+    "sentences_complete": 80,
+    "all_three_identical": 0.025,
+    "L1_vs_L3_identical": 0.0375
+  },
+  "bootstrap_95ci": {
+    "SARI_paper": [
+      0.35923532809609515,
+      0.387652736771811
+    ],
+    "BERTScore_F1": [
+      0.791857123374939,
+      0.8376234173774719
+    ],
+    "FRE_ID_pred": [
+      -27.102562597694423,
+      -13.435211608223923
+    ],
+    "BLEU": [
+      9.458750833534491,
+      17.033582789769355
+    ]
+  }
+}
